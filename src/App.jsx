@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Subnavbar from "./components/Subnavbar";
 import About from "./pages/About";
 import ViewArticle from "./pages/ViewArticle";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Subnavbar />
           <div className="pt-[118px]">
             <Routes>
-              {/* <Route path='/' element={<Home />} /> */}
+              <Route path='/' element={<Home />} />
               <Route path='/addarticle' element={<AddarticleForm />} />
               <Route path='/about' element={<About />} />
               <Route path='/blogger/:id' element={<ViewArticle />} />

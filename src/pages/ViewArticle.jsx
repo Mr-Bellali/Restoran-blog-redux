@@ -4,15 +4,17 @@ import { useParams } from "react-router-dom";
 import { fetchArticleById } from "../slices/articlesSlice";
 
 const ViewArticle = () => {
-  const { articleId } = useParams();
+  const { id } = useParams();
   const dispatch = useDispatch();
   const article = useSelector((state) =>
-    state.articles.items.find((article) => article.id === articleId)
+    state.articles.items.find((article) => article.id === id)
   );
 
   useEffect(() => {
-    dispatch(fetchArticleById(articleId));
-  }, [dispatch, articleId]);
+    if (id) {
+      dispatch(fetchArticleById(id));
+    }
+  }, [dispatch, id]);
 
   if (!article) {
     return <div>Loading...</div>;

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 const About = () => {
-  const aboutContent = useSelector((state) => state.about.content);
+  const aboutContent = useSelector((state) => state.about?.content || "Default about content");
 
   return (
     <div className="container mx-auto p-4">
